@@ -48,8 +48,14 @@ async def sing_verse(day: int) -> str:
         else:
             print(f"   {gift}")
     
-    # Dramatic pause for effect
-    await asyncio.sleep(1.5)
+    #Simulate an error
+    if day == 5:
+        attempt = activity.info().attempt
+        if attempt == 1:
+            raise ApplicationError("I'm sorry, I made a mistake! I can't sing the 5th day of Christmas - let me try again!")
+        elif attempt <= 3:
+            await asyncio.sleep(10)
+            raise ApplicationError("I'm sorry, I made a mistake! I can't sing the 5th day of Christmas - let me try again!")
     
     # Return statements reflect in the Temporal UI for tracking activity output
     return f"✓ Completed verse {day}: {GIFTS[day]}"
