@@ -27,6 +27,7 @@ GIFTS = {
 
 @activity.defn
 async def sing_verse(day: int) -> str:
+    await asyncio.sleep(3)
     """Sings one verse of the 12 Days of Christmas song."""
     if day < 1 or day > 12:
         return f"Invalid day: {day}. Must be between 1 and 12."
@@ -52,10 +53,10 @@ async def sing_verse(day: int) -> str:
     if day == 5:
         attempt = activity.info().attempt
         if attempt == 1:
-            raise ApplicationError("I'm sorry, I made a mistake! I can't sing the 5th day of Christmas - let me try again!")
+            raise ApplicationError("I'm sorry, I forgot what the 5th day of Christmas is...let me try again!")
         elif attempt <= 3:
             await asyncio.sleep(10)
-            raise ApplicationError("I'm sorry, I made a mistake! I can't sing the 5th day of Christmas - let me try again!")
+            raise ApplicationError("I'm sorry, I forgot what the 5th day of Christmas is...let me try again!")
     
     # Return statements reflect in the Temporal UI for tracking activity output
     return f"✓ Completed verse {day}: {GIFTS[day]}"
@@ -63,6 +64,7 @@ async def sing_verse(day: int) -> str:
 
 @activity.defn
 async def get_gift_info(day: int) -> str:
+    await asyncio.sleep(3)
     """Returns information about what gift comes on a specific day."""
     if day < 1 or day > 12:
         return f"Invalid day: {day}. Must be between 1 and 12."
