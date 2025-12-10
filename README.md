@@ -83,7 +83,7 @@ uv run python worker.py
 
 CLI version:
 ```bash
-uv run python starter.py
+uv run python -m durable_temporal.worker
 ```
 
 OR Streamlit UI:
@@ -92,6 +92,10 @@ uv run streamlit run streamlit_app.py
 ```
 
 The Streamlit UI will open at `http://localhost:8501` 🎨
+
+The UI includes two tabs to compare:
+- **Temporal version** (durable, resumable) - requires worker running
+- **Pure OpenAI Agents SDK** (non-durable, loses context on crash)
 
 ### Test Durability 🧪
 

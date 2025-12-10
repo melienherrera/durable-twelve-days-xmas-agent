@@ -7,7 +7,7 @@ The workflow ID is important - using the same ID allows resuming after crashes!
 
 import asyncio
 from temporalio.client import Client
-from workflow import TwelveDaysWorkflow
+from .workflow import TwelveDaysWorkflow
 from temporalio.contrib.openai_agents import OpenAIAgentsPlugin
 from temporalio.common import WorkflowIDReusePolicy
 from dotenv import load_dotenv

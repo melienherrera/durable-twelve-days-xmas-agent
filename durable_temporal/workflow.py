@@ -18,7 +18,7 @@ from temporalio import workflow
 from datetime import timedelta
 from agents import Agent, Runner
 from temporalio.contrib import openai_agents
-from activities import sing_verse, get_gift_info
+from .activities import sing_verse, get_gift_info
 
 @workflow.defn
 class TwelveDaysWorkflow:

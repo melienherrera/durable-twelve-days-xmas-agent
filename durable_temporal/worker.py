@@ -13,8 +13,8 @@ from temporalio.client import Client
 from temporalio.worker import Worker
 from temporalio.contrib.openai_agents import OpenAIAgentsPlugin, ModelActivityParameters
 
-from workflow import TwelveDaysWorkflow
-from activities import sing_verse, get_gift_info
+from .workflow import TwelveDaysWorkflow
+from .activities import sing_verse, get_gift_info
 
 
 async def main():
